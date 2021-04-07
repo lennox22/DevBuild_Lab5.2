@@ -14,7 +14,7 @@ namespace RoshamboMark2
         public string playerName;
         public Roshambo choice;
 
-        public virtual Roshambo GenerateRoshambo()
+        public virtual Roshambo GenerateRoshambo(string input)
         {
 
             return Roshambo.paper;
@@ -23,7 +23,7 @@ namespace RoshamboMark2
 
     class RockAndRollBaby : Player
     {
-        public override Roshambo GenerateRoshambo()
+        public override Roshambo GenerateRoshambo(string input)
         {
             choice = Roshambo.rock;
             return choice;
@@ -34,7 +34,7 @@ namespace RoshamboMark2
     {
         public static Random rand = new Random();
 
-        public override Roshambo GenerateRoshambo()
+        public override Roshambo GenerateRoshambo(string input)
         {
             int temp = rand.Next(0, 3);
 
@@ -47,31 +47,45 @@ namespace RoshamboMark2
 
     class FleshBag : Player
     {
-        public override Roshambo GenerateRoshambo()
+        public override Roshambo GenerateRoshambo(string input)
         {
+            if (input == "r" || input == "rock")
+            {
+                choice = Roshambo.rock;
 
+            }
+            else if (input == "p" || input == "paper")
+            {
+                choice = Roshambo.paper;
+            }
+            else
+            {
+                choice = Roshambo.scissors;
+            }
             return choice;
         }
     }
     class Program
     {
         public static FleshBag Human = new FleshBag();
+        public static Roshambo HumanChoice;
         public static RockAndRollBaby SadRock = new RockAndRollBaby();
-        Roshambo SadRockChoice = SadRock.GenerateRoshambo();
+        Roshambo SadRockChoice = SadRock.GenerateRoshambo("hello");
         
         public static Wildcard CrazyBilly = new Wildcard();
-        Roshambo CrazyBillyChoice = CrazyBilly.GenerateRoshambo();
+        Roshambo CrazyBillyChoice = CrazyBilly.GenerateRoshambo("nice day");
         public static int humanScore;
         public static int sadRockScore;
         public static int crazyBillyScore;
         public static int tie;
-
+        
         static void Main(string[] args)
         {
             bool loop = true;
             int against;
 
-            Console.WindowHeight = 45;
+
+            Console.WindowHeight = 46;
             SadRock.playerName = "Sad Rock";
             CrazyBilly.playerName = "Crazy Billy";
 
@@ -90,7 +104,7 @@ namespace RoshamboMark2
             {
                 against = PlayWho();
 
-                HumanChoice();
+                HumanDecision();
 
                 Opponent(against);
 
@@ -106,7 +120,7 @@ namespace RoshamboMark2
             Console.Write($"Current score:\n{Human.playerName}: {humanScore} points\nSad Rock: {sadRockScore} points\nCrazy Billy: {crazyBillyScore} points\n{tie} ties");
         }
 
-        static void HumanChoice()
+        static void HumanDecision()
         {
             bool invalid = true;
             string input;
@@ -121,26 +135,15 @@ namespace RoshamboMark2
                     invalid = true;
                     InvalidMessages(3);
                 }
-                else if (input == "r" || input == "rock")
-                {
-                    invalid = false;
-                    Human.choice = Roshambo.rock;
-
-                }
-                else if (input == "p" || input == "paper")
-                {
-                    invalid = false;
-                    Human.choice = Roshambo.paper;
-                }
                 else
                 {
                     invalid = false;
-                    Human.choice = Roshambo.scissors;
                 }
+               
 
             } while (invalid);
 
-
+            HumanChoice = Human.GenerateRoshambo(input);
         }
 
         static void Opponent(int whichOpponent)
@@ -374,6 +377,7 @@ namespace RoshamboMark2
         }
         static void Scissors()
         {
+            Console.WriteLine();
             Console.WriteLine("     SSSS          SSSS     SSSSSSSS     SSSS         SSSS          SSSS      SSSSSSSS        SSSS    ");
             Console.WriteLine("   SSS  SSS      SSSSSSSS   SSSSSSSS   SSS  SSS     SSS  SSS      SSSSSSSS    SSSSSSSSS     SSS  SSS  ");
             Console.WriteLine("  SSS    SSS    SSS    SSS     SS     SSS    SSS   SSS    SSS    SSS    SSS   SS     SSS   SSS    SSS  ");
