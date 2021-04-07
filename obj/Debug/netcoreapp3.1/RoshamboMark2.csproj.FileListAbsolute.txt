@@ -1,0 +1,13 @@
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.exe
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.deps.json
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.runtimeconfig.json
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.runtimeconfig.dev.json
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.dll
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\bin\Debug\netcoreapp3.1\RoshamboMark2.pdb
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.csprojAssemblyReference.cache
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.AssemblyInfoInputs.cache
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.AssemblyInfo.cs
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.csproj.CoreCompileInputs.cache
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.dll
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.pdb
+C:\Users\lbrown4\dev\Day1\RoshamboMark2\obj\Debug\netcoreapp3.1\RoshamboMark2.genruntimeconfig.cache
